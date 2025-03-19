@@ -17,11 +17,17 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.rollDiceButton).setOnClickListener {
 
             if (savedInstanceState == null) {
-                val dieFragment = DieFragment.newInstance(10)
+                val dieFragment1 = DieFragment.newInstance(12)
+                val dieFragment2 = DieFragment.newInstance(10)
 
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, dieFragment)
+                    .replace(R.id.fragmentContainerView, dieFragment1)
                     .commit()
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainerView2, dieFragment2)
+                    .commit()
+
             }
         }
 
